@@ -1,0 +1,9 @@
+# Autopsy case config file
+# Case: week3
+
+created Wed Mar 25 05:44:27 2026
+desc Training
+images	images
+data		output
+log		logs
+reports	reports

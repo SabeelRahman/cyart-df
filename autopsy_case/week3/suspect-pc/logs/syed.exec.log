@@ -1,0 +1,33 @@
+Wed Mar 25 05:53:00 2026: '/usr/bin/img_stat' -t "/root/forensics-week3/evidence/forensic_output.E01"
+Wed Mar 25 05:53:00 2026: '/usr/bin/mmstat' -i ewf "/root/forensics-week3/evidence/forensic_output.E01"
+Wed Mar 25 05:54:41 2026: '/usr/bin/img_stat' -t "/root/forensics-week3/evidence/forensic_output.E01"
+Wed Mar 25 05:54:41 2026: '/usr/bin/fsstat' -t -i ewf "/root/forensics-week3/evidence/forensic_output.E01"
+Wed Mar 25 05:58:11 2026: '/usr/bin/img_stat' -t "/root/forensics-week3/evidence/forensic_output.E01"
+Wed Mar 25 05:58:11 2026: '/usr/bin/fsstat' -o 0 -i ewf -f fat16 "/root/forensics-week3/evidence/forensic_output.E01"
+Wed Mar 25 05:58:11 2026: /bin/ln -s '/root/forensics-week3/evidence/forensic_output.E01' '/root/forensics-week3/autopsy_case/week3/suspect-pc/images/forensic_output.E01'
+Wed Mar 25 06:13:48 2026: '/usr/bin/fls' -f fat16 -la -z ''UTC'' -s '0' -o 0 -i ewf '/root/forensics-week3/autopsy_case/week3/suspect-pc/images/forensic_output.E01' 2
+Wed Mar 25 06:14:10 2026: '/usr/bin/icat' -f fat16  -o 0 -i ewf '/root/forensics-week3/autopsy_case/week3/suspect-pc/images/forensic_output.E01' 7 | '/usr/bin/file' -z -b -
+Wed Mar 25 06:14:11 2026: '/usr/bin/icat' -f fat16  -o 0 -i ewf '/root/forensics-week3/autopsy_case/week3/suspect-pc/images/forensic_output.E01' 7 | '/usr/bin/file' -z -b -
+Wed Mar 25 06:14:11 2026: '/usr/bin/icat' -f fat16  -o 0 -i ewf '/root/forensics-week3/autopsy_case/week3/suspect-pc/images/forensic_output.E01' 7
+Wed Mar 25 06:16:25 2026: '/usr/bin/blkcat' -f fat16 -s -o 0 -i ewf '/root/forensics-week3/autopsy_case/week3/suspect-pc/images/forensic_output.E01'
+Wed Mar 25 06:16:25 2026: '/usr/bin/blkls' -e -f fat16 -o 0 -i ewf '/root/forensics-week3/autopsy_case/week3/suspect-pc/images/forensic_output.E01' | '/usr/bin/srch_strings' -a -t d | '/bin/grep'  'CONFIDENTIAL'
+Wed Mar 25 06:16:29 2026: '/usr/bin/blkls' -e -f fat16 -o 0 -i ewf '/root/forensics-week3/autopsy_case/week3/suspect-pc/images/forensic_output.E01' | '/usr/bin/srch_strings' -a -t d -e l | '/bin/grep'  'CONFIDENTIAL'
+Wed Mar 25 06:17:41 2026: '/usr/bin/fls' -f fat16 -la -z ''UTC'' -s '0' -o 0 -i ewf '/root/forensics-week3/autopsy_case/week3/suspect-pc/images/forensic_output.E01' 2
+Wed Mar 25 06:18:59 2026: '/usr/bin/blkcat' -f fat16 -s -o 0 -i ewf '/root/forensics-week3/autopsy_case/week3/suspect-pc/images/forensic_output.E01'
+Wed Mar 25 06:18:59 2026: '/usr/bin/blkls' -e -f fat16 -o 0 -i ewf '/root/forensics-week3/autopsy_case/week3/suspect-pc/images/forensic_output.E01' | '/usr/bin/srch_strings' -a -t d | '/bin/grep'  'CONFIDENTIAL password secret salary'
+Wed Mar 25 06:19:00 2026: '/usr/bin/blkls' -e -f fat16 -o 0 -i ewf '/root/forensics-week3/autopsy_case/week3/suspect-pc/images/forensic_output.E01' | '/usr/bin/srch_strings' -a -t d -e l | '/bin/grep'  'CONFIDENTIAL password secret salary'
+Wed Mar 25 06:20:14 2026: '/usr/bin/blkcat' -f fat16 -s -o 0 -i ewf '/root/forensics-week3/autopsy_case/week3/suspect-pc/images/forensic_output.E01'
+Wed Mar 25 06:20:14 2026: '/usr/bin/blkls' -e -f fat16 -o 0 -i ewf '/root/forensics-week3/autopsy_case/week3/suspect-pc/images/forensic_output.E01' | '/usr/bin/srch_strings' -a -t d | '/bin/grep'  'password'
+Wed Mar 25 06:20:15 2026: '/usr/bin/blkls' -e -f fat16 -o 0 -i ewf '/root/forensics-week3/autopsy_case/week3/suspect-pc/images/forensic_output.E01' | '/usr/bin/srch_strings' -a -t d -e l | '/bin/grep'  'password'
+Wed Mar 25 06:21:05 2026: '/usr/bin/blkcat' -f fat16 -s -o 0 -i ewf '/root/forensics-week3/autopsy_case/week3/suspect-pc/images/forensic_output.E01'
+Wed Mar 25 06:21:05 2026: '/usr/bin/blkls' -e -f fat16 -o 0 -i ewf '/root/forensics-week3/autopsy_case/week3/suspect-pc/images/forensic_output.E01' | '/usr/bin/srch_strings' -a -t d | '/bin/grep' -i 'CONFIDENTIAL'
+Wed Mar 25 06:21:05 2026: '/usr/bin/blkls' -e -f fat16 -o 0 -i ewf '/root/forensics-week3/autopsy_case/week3/suspect-pc/images/forensic_output.E01' | '/usr/bin/srch_strings' -a -t d -e l | '/bin/grep' -i 'CONFIDENTIAL'
+Wed Mar 25 06:22:49 2026: '/usr/bin/blkcat' -f fat16 -s -o 0 -i ewf '/root/forensics-week3/autopsy_case/week3/suspect-pc/images/forensic_output.E01'
+Wed Mar 25 06:22:49 2026: '/usr/bin/blkls' -e -f fat16 -o 0 -i ewf '/root/forensics-week3/autopsy_case/week3/suspect-pc/images/forensic_output.E01' | '/usr/bin/srch_strings' -a -t d | '/bin/grep'  'Alpha'
+Wed Mar 25 06:22:49 2026: '/usr/bin/blkls' -e -f fat16 -o 0 -i ewf '/root/forensics-week3/autopsy_case/week3/suspect-pc/images/forensic_output.E01' | '/usr/bin/srch_strings' -a -t d -e l | '/bin/grep'  'Alpha'
+Wed Mar 25 06:26:42 2026: '/usr/bin/blkcat' -f fat16 -s -o 0 -i ewf '/root/forensics-week3/autopsy_case/week3/suspect-pc/images/forensic_output.E01'
+Wed Mar 25 06:26:42 2026: '/usr/bin/blkls' -e -f fat16 -o 0 -i ewf '/root/forensics-week3/autopsy_case/week3/suspect-pc/images/forensic_output.E01' | '/usr/bin/srch_strings' -a -t d | '/bin/grep'  'password '
+Wed Mar 25 06:26:43 2026: '/usr/bin/blkls' -e -f fat16 -o 0 -i ewf '/root/forensics-week3/autopsy_case/week3/suspect-pc/images/forensic_output.E01' | '/usr/bin/srch_strings' -a -t d -e l | '/bin/grep'  'password '
+Wed Mar 25 06:27:13 2026: '/usr/bin/blkcat' -f fat16 -s -o 0 -i ewf '/root/forensics-week3/autopsy_case/week3/suspect-pc/images/forensic_output.E01'
+Wed Mar 25 06:27:13 2026: '/usr/bin/blkls' -e -f fat16 -o 0 -i ewf '/root/forensics-week3/autopsy_case/week3/suspect-pc/images/forensic_output.E01' | '/usr/bin/srch_strings' -a -t d | '/bin/grep' -i 'password'
+Wed Mar 25 06:27:14 2026: '/usr/bin/blkls' -e -f fat16 -o 0 -i ewf '/root/forensics-week3/autopsy_case/week3/suspect-pc/images/forensic_output.E01' | '/usr/bin/srch_strings' -a -t d -e l | '/bin/grep' -i 'password'

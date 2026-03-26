@@ -1,0 +1,31 @@
+REGISTRY ARTIFACTS ANALYSIS
+===========================
+Examiner: Syed Sabeelur Rahman
+Date: Wed Mar 25 09:00:06 CDT 2026
+Registry Hive: NTUSER.DAT (practice sample)
+Tool: RegRipper 3.0
+
+KEY FINDINGS TABLE:
+| Registry Key/Plugin | Value/Data Found | Forensic Significance |
+|--------------------|-----------------|---------------------|
+| RecentDocs | budget_report.txt, confidential_memo.doc | User accessed sensitive documents during incident window |
+| UserAssist | update.exe (5 executions), payload.exe (Temp folder) | Suspicious program execution pattern indicates malware activity |
+| Run Keys | C:\ProgramData\svchost.exe, AppData\sync.exe | Persistence mechanisms - malware configured to run at boot |
+| TypedURLs | Internal admin panel (192.168.1.100), malware sites | Reconnaissance and potential C2 research activity |
+
+TIMELINE CORRELATION:
+- 10:00 UTC: USB first connected
+- 10:10-10:12 UTC: Sensitive files accessed + USB reconnected (possible exfiltration)
+- 10:14 UTC: Persistence Run keys added
+- 10:14-10:15 UTC: Suspicious executables run from Temp folder
+
+NOTES:
+- All timestamps in UTC; correlate with network logs for complete picture
+- Fake svchost.exe in ProgramData is strong malware indicator (legitimate is in System32)
+- Registry artifacts help reconstruct user activity timeline
+
+RECOMMENDATIONS:
+1. Hunt for update.exe/payload.exe across enterprise endpoints
+2. Block suspicious Run key paths at EDR/AV level
+3. Review proxy/firewall logs for identified URLs
+4. Preserve registry hives with proper hashing for evidentiary integrity

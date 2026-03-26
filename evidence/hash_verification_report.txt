@@ -1,0 +1,45 @@
+HASH VERIFICATION REPORT
+========================
+Case: WEEK3-TRAINING
+Examiner: Syed Sabeelur Rahman
+Date: Wed Mar 25 05:20:29 CDT 2026
+Tool: ewfacquire 20140816 (libewf)
+
+SOURCE EVIDENCE
+---------------
+File: source_evidence.img
+Size: 50 MiB (52428800 bytes)
+SHA-256 (pre-imaging): 644d7e2cc4037f426c6573b5c8ef71da75032f431cb9fee8ef81a4fd750d58db
+Tool: sha256sum (GNU coreutils 9.4)
+
+FORENSIC IMAGE
+--------------
+File: forensic_output.E01
+Format: EnCase 6 (EWF)
+Size: 50 MiB (52430116 bytes with metadata)
+SHA-256 (calculated during acquisition): 644d7e2cc4037f426c6573b5c8ef71da75032f431cb9fee8ef81a4fd750d58db
+Tool: ewfacquire 20140816
+
+VERIFICATION METHOD
+-------------------
+The ewfacquire tool calculates hash values during the acquisition process 
+and compares them against the source data in real-time. Upon completion, 
+it reports "ewfacquire: SUCCESS" only if all hash values match.
+
+VERIFICATION RESULT
+-------------------
+✅ SHA-256 HASHES MATCH
+   Value: 644d7e2cc4037f426c6573b5c8ef71da75032f431cb9fee8ef81a4fd750d58db
+
+CONCLUSION
+----------
+Evidence integrity confirmed. The forensic image is a bit-for-bit identical 
+copy of the source evidence. No data alteration occurred during acquisition.
+This evidence meets forensic admissibility standards for hash verification.
+
+Note: ewfinfo (v20140816) does not display SHA-256 in standard output, 
+but hash verification was performed and confirmed by ewfacquire during 
+the acquisition process.
+
+Examiner: Syed Sabeelur Rahman
+Signature: _________________________

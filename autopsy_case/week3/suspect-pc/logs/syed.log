@@ -1,0 +1,12 @@
+Wed Mar 25 05:50:18 2026: Host suspect-pc opened
+Wed Mar 25 06:07:20 2026: vol1: volume opened
+Wed Mar 25 06:13:48 2026: forensic_output.E01-0-0: Directory listing of C:/ (2)
+Wed Mar 25 06:14:11 2026: forensic_output.E01-0-0: Viewing C:/credentials.txt (7) as ASCII
+Wed Mar 25 06:16:25 2026: forensic_output.E01-0-0: ASCII, Unicode, search for CONFIDENTIAL
+Wed Mar 25 06:17:41 2026: forensic_output.E01-0-0: Directory listing of C:/ (2)
+Wed Mar 25 06:18:59 2026: forensic_output.E01-0-0: ASCII, Unicode, search for CONFIDENTIAL password secret salary
+Wed Mar 25 06:20:14 2026: forensic_output.E01-0-0: ASCII, Unicode, search for password
+Wed Mar 25 06:21:05 2026: forensic_output.E01-0-0: ASCII, Unicode, Case Insensitive search for CONFIDENTIAL
+Wed Mar 25 06:22:49 2026: forensic_output.E01-0-0: ASCII, Unicode, search for Alpha
+Wed Mar 25 06:26:42 2026: forensic_output.E01-0-0: ASCII, Unicode, search for password 
+Wed Mar 25 06:27:13 2026: forensic_output.E01-0-0: ASCII, Unicode, Case Insensitive search for password

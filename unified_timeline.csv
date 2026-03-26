@@ -1,0 +1,12 @@
+Timestamp (UTC),Source,Event,Artifact,IOC/Hash,Significance,MITRE ATT&CK
+2026-03-25 10:00:00,Registry/USBStor,USB Device Connected,Samsung Flash Drive (Serial: ABC123XYZ),-,"Physical device linked to incident; possible data transfer vector",-
+2026-03-25 10:10:30,Autopsy/RecentDocs,File Accessed,confidential_memo.doc,-,"Sensitive document accessed during incident window; potential exfiltration target",-
+2026-03-25 10:11:30,Autopsy/RecentDocs,File Accessed,credentials_backup.txt,-,"Credential file accessed; possible credential theft",-
+2026-03-25 10:12:00,Registry/USBStor,USB Device Reconnected,Samsung Flash Drive (Serial: ABC123XYZ),-,"Second connection; timing aligns with file access - possible data exfiltration",-
+2026-03-25 10:12:06,Autopsy/RecentDocs,File Accessed,budget_report.txt,-,"Financial document accessed; high-value target for exfiltration",-
+2026-03-25 10:14:00,Registry/Run Key,Persistence Added,C:\ProgramData\svchost.exe,-,"Fake svchost added to Run key; malware persistence mechanism",T1547.001
+2026-03-25 10:14:30,Static Analysis,Suspicious String Found,powershell -enc [base64],-,"Obfuscated PowerShell command; common malware execution technique",T1059.001
+2026-03-25 10:14:45,Dynamic Analysis,Payload Dropped,C:\Users\admin\AppData\Local\Temp\svch0st.exe,SHA256:911a48813...,"Malware payload deployed to Temp folder; impersonates legitimate svchost",T1105
+2026-03-25 10:15:00,Network/Wireshark,C2 Callback Initiated,185.234.72.15:443,Domain: malicious-c2.evil-domain.com,"Encrypted HTTPS beacon to known C2 infrastructure; command & control established",T1071.001
+2026-03-25 10:15:30,Dynamic Analysis,DGA Query,xk7j2m9.dga-domain.net,-,"Domain Generation Algorithm query; resilient C2 infrastructure technique",T1095
+2026-03-25 10:16:00,Network/Wireshark,Data Exfiltration Attempt,POST to 45.77.65.123:8080/beacon,-,"HTTP POST with encrypted payload; potential data exfiltration channel",T1041

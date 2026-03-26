@@ -1,0 +1,23 @@
+WEEK-3 FORENSIC INVESTIGATION REPORT
+Examiner: Syed Sabeelur Rahman | Date: 2026-03-25 | Case: WEEK3-TRAINING
+
+1. Introduction
+This report covers the work done for the Week-3 Forensics Capstone. The core objective was to perform a complete digital forensic investigation, from evidence acquisition to malware analysis. By integrating tools like ewfacquire, Autopsy, Wireshark, RegRipper, and Hybrid Analysis, this task demonstrates a complete lifecycle of evidence preservation and threat identification.
+
+2. Evidence Acquisition & Integrity
+I created a 50MB simulated USB image and forensically imaged it using ewfacquire. I verified integrity using SHA-256 hashing. The source hash (644d7e2cc4037f426c6573b5c8ef71da75032f431cb9fee8ef81a4fd750d58db) matched the forensic image hash, confirming no data alteration during acquisition. I documented this in the chain_of_custody.txt file.
+
+3. Analysis Findings
+Disk Analysis (Autopsy): I loaded the E01 image into Autopsy 2.24. I recovered three key files: credentials.txt, salaries.txt, and secret_notes.txt. Keyword searching for "CONFIDENTIAL" and "password" confirmed sensitive data presence.
+
+Registry Analysis (RegRipper): I analyzed a sample NTUSER.DAT hive. Using plugins like recentdocs and userassist, I identified simulated artifacts showing file access and program execution during the incident window (10:10-10:12 UTC).
+
+Network Analysis (Wireshark): I captured baseline traffic using Wireshark. I filtered for DNS and HTTP to establish normal behavior patterns.
+
+Malware Analysis (Static & Dynamic): I performed static string extraction on a suspicious executable, identifying C2 URLs and encoded PowerShell commands. Dynamic analysis via Hybrid Analysis of an Emotet sample showed typical behaviors: registry persistence (T1547.001) and C2 communication (T1071.001).
+
+4. Timeline Correlation
+I merged findings into a unified timeline. Events showed a clear sequence: USB connection → sensitive file access → malware persistence → C2 communication. This aligns with insider threat exfiltration patterns.
+
+5. Conclusion
+I successfully completed the forensic lifecycle. All evidence was hash-verified. The analysis identified credible simulated threats. This exercise reinforced the importance of tool integration and meticulous documentation in forensic investigations.

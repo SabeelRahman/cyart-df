@@ -1,0 +1,108 @@
+================================================================
+RegRipper v.3.0 - Registry Forensic Analysis Report
+================================================================
+Examiner: Syed Sabeelur Rahman
+Date: 2026-03-25
+Case: WEEK3-TRAINING
+Hive: NTUSER.DAT (sample practice hive)
+
+================================================================
+PLUGIN: recentdocs v.20200427
+Hive: NTUSER.DAT
+LastWrite: Tue Mar 25 10:12:06 2026 Z
+----------------------------------------------------------------
+\Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs
+
+  MRUListEx (Most Recently Used order):
+    [0] .txt files
+    [1] .doc files
+    [FF] End of list
+
+  .txt extension entries:
+    budget_report.txt
+      LastWrite: Tue Mar 25 10:12:06 2026 Z
+      MRU Index: 0
+      [NOTE: Accessed during suspected exfiltration window]
+    
+    credentials_backup.txt
+      LastWrite: Tue Mar 25 10:11:30 2026 Z
+
+  .doc extension entries:
+    confidential_memo.doc
+      LastWrite: Tue Mar 25 10:10:30 2026 Z
+      [NOTE: Contains "CONFIDENTIAL" keyword]
+
+================================================================
+PLUGIN: userassist v.20170204
+Hive: NTUSER.DAT
+----------------------------------------------------------------
+[NOTE: Values are ROT-13 encoded - decoded below]
+
+  ZbyvyrSybng.rkr → MobileFloat.exe (decoded)
+    Path: C:\Program Files\Suspicious\update.exe
+    Execution Count: 5
+    Last Execution: Tue Mar 25 10:15:00 2026 Z
+    [NOTE: Suspicious program executed multiple times]
+
+  Abgrcnq.rkr → Notepad.exe (decoded)
+    Path: C:\Windows\System32\notepad.exe
+    Execution Count: 12
+
+  P:\PbyqRkcyber.rkr → ColdExplorer.exe (decoded)
+    Path: C:\Users\admin\AppData\Local\Temp\payload.exe
+    Execution Count: 1
+    Last Execution: Tue Mar 25 10:14:30 2026 Z
+    [NOTE: Temp folder execution - common malware tactic]
+
+================================================================
+PLUGIN: run v.20200511
+Hive: NTUSER.DAT
+----------------------------------------------------------------
+\Software\Microsoft\Windows\CurrentVersion\Run
+
+  SecurityUpdate: C:\ProgramData\svchost.exe
+    LastWrite: Tue Mar 25 10:14:00 2026 Z
+    [NOTE: FAKE svchost - legitimate is in System32]
+    [INDICATOR: Persistence mechanism - malware runs at boot]
+
+  OneDriveSync: C:\Users\admin\AppData\Roaming\sync.exe
+    LastWrite: Tue Mar 25 10:13:00 2026 Z
+    [NOTE: Suspicious sync.exe in AppData - potential data exfil tool]
+
+================================================================
+PLUGIN: typedurls v.20200427
+Hive: NTUSER.DAT
+----------------------------------------------------------------
+\Software\Microsoft\Internet Explorer\TypedURLs
+
+  url1: http://cyberdefenders.org/challenges
+  url2: https://bazaar.abuse.ch/browse
+  url3: http://192.168.1.100/admin
+  url4: https://pastebin.com/raw/xyz123
+  [NOTE: Visited malware sample sites and internal admin panel]
+
+================================================================
+SUMMARY OF KEY FORENSIC ARTIFACTS
+================================================================
+| Artifact Type | Finding | Significance |
+|--------------|---------|-------------|
+| RecentDocs | budget_report.txt, confidential_memo.doc | Sensitive files accessed |
+| UserAssist | update.exe, payload.exe executed | Suspicious program activity |
+| Run Keys | fake svchost.exe, sync.exe | Malware persistence mechanisms |
+| TypedURLs | Internal admin panel, malware sites | Reconnaissance activity |
+
+TIMELINE CORRELATION:
+10:00:00 - USB device first connected (from SYSTEM hive USBStor)
+10:10:30 - confidential_memo.doc accessed
+10:12:00 - USB device last connected (possible data transfer)
+10:12:06 - budget_report.txt accessed
+10:14:00 - Persistence Run key added
+10:14:30 - payload.exe executed from Temp folder
+10:15:00 - update.exe last execution
+
+RECOMMENDATIONS:
+1. Image the Samsung USB device for content analysis
+2. Hunt for update.exe and payload.exe across enterprise endpoints
+3. Block ProgramData\svchost.exe at EDR level
+4. Review proxy logs for visits to pastebin.com/raw/xyz123
+5. Correlate with network logs for C2 callbacks around 10:14-10:15 UTC

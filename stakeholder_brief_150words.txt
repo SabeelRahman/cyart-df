@@ -1,0 +1,21 @@
+CONFIDENTIAL - MANAGEMENT BRIEFING
+Case: WEEK3-TRAINING | Prepared by: Syed Sabeelur Rahman | Date: 2026-03-25
+
+1. Executive Summary
+I conducted a forensic investigation into a simulated insider threat incident. The analysis confirmed suspicious activity involving unauthorized data access and malware deployment on a employee workstation.
+
+2. Key Findings
+• Data Access: Sensitive files (budget reports, credentials) were accessed during a narrow time window.
+• Device Connection: A USB flash drive was connected coinciding with file access, suggesting potential data exfiltration.
+• Malware Presence: Malicious software was identified that establishes persistent access and communicates with external servers.
+
+3. Actions Taken
+• I preserved all digital evidence with cryptographic hash verification to ensure legal admissibility.
+• I documented the chain of custody throughout the investigation.
+• I extracted technical indicators (IPs, domains, file hashes) for blocking.
+
+4. Recommendations
+Based on my analysis, I recommend reviewing access controls for sensitive financial documents and enhancing monitoring for unusual USB device usage. I also suggest deploying detection rules for the identified malware behaviors across the enterprise.
+
+5. Impact
+This was a training exercise, but the techniques used reflect real-world incident response procedures.

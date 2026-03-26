@@ -1,0 +1,9 @@
+# Autopsy host config file
+# Case: week3		Host: suspect-pc
+# Created: Wed Mar 25 05:49:19 2026
+
+desc Simulated employee workstation
+timezone  UTC
+timeskew  0
+image  img1  ewf  images/forensic_output.E01
+part  vol1  img1	0  0    fat16  C:

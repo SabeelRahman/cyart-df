@@ -1,0 +1,22 @@
+mkdir -p ~/forensics-week3
+nano ~/forensics-week3/task1-environment-log.txt
+```
+
+Then paste this inside the file:
+```
+TASK 1 - ENVIRONMENT SETUP LOG
+================================
+Date: 24-03-2026
+Analyst: [Your Name]
+
+Tool          | Version    | OS         | Notes
+--------------|------------|------------|---------------------------
+ewfacquire    | 20140816   | Kali Linux | FTK Imager equivalent
+dc3dd         | 7.3.1      | Kali Linux | Forensic imaging + hashing
+Autopsy       | 2.24       | Kali Linux | Web UI at localhost:9999
+Wireshark     | 4.6.3      | Kali Linux | GUI + tshark CLI
+RegRipper     | 3.0        | Kali Linux | Symlink at /usr/local/bin
+sha256sum     | 9.4        | Kali Linux | Built-in coreutils
+md5sum        | 9.4        | Kali Linux | Built-in coreutils
+
+STATUS: All tools verified and working.

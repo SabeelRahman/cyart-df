@@ -1,0 +1,32 @@
+CHAIN OF CUSTODY FORM
+=====================
+Case Number: WEEK3-TRAINING
+Date: 2026-03-25
+Examiner: Syed Sabeelur Rahman
+
+EVIDENCE ITEMS
+--------------
+| Item | Description | SHA-256 Hash | Storage |
+|------|-------------|--------------|---------|
+| source_evidence.img | Simulated USB evidence (50MB FAT32) | 644d7e2cc4037f426c6573b5c8ef71da75032f431cb9fee8ef81a4fd750d58db | ~/forensics-week3/evidence/ |
+| forensic_output.E01 | Forensic image (EWF/EnCase 6) | 644d7e2cc4037f426c6573b5c8ef71da75032f431cb9fee8ef81a4fd750d58db | ~/forensics-week3/evidence/ |
+
+CUSTODY LOG
+-----------
+- Wed Mar 25 05:20:43 CDT 2026: Created source image with dd (50MB, FAT32 formatted)
+- Wed Mar 25 05:20:43 CDT 2026: Generated baseline SHA-256 hash using sha256sum
+- Wed Mar 25 05:20:43 CDT 2026: Created forensic image with ewfacquire 20140816
+- Wed Mar 25 05:20:43 CDT 2026: Hash verification completed via ewfacquire output - MATCH CONFIRMED
+- Wed Mar 25 05:20:43 CDT 2026: Documentation completed by Syed Sabeelur Rahman
+
+INTEGRITY STATEMENT
+-------------------
+The SHA-256 hash values for source and forensic image are identical:
+644d7e2cc4037f426c6573b5c8ef71da75032f431cb9fee8ef81a4fd750d58db
+
+This confirms no data alteration occurred during the acquisition process.
+Evidence is preserved in forensically sound manner and is admissible 
+for analysis and potential legal proceedings.
+
+Examiner Signature: Syed Sabeelur Rahman
+Date: 2026-03-25

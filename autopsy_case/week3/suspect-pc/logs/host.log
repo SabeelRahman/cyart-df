@@ -1,0 +1,6 @@
+Wed Mar 25 05:49:19 2026: Host suspect-pc added to case week3
+Wed Mar 25 05:50:18 2026: Host suspect-pc opened by syed
+Wed Mar 25 05:58:11 2026: Sym Linking image /root/forensics-week3/evidence/forensic_output.E01 into week3:suspect-pc
+Wed Mar 25 05:58:11 2026: Image added: image img1 ewf  images/forensic_output.E01
+Wed Mar 25 05:58:11 2026: Volume added: part  vol1 img1	0  0    fat16  C:
+Wed Mar 25 06:07:20 2026: Image vol1 opened by syed
